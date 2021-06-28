@@ -65,7 +65,7 @@ H1      = [ones(n-1,1); 1/w];
 maxAcc  = 0;
     
 fprintf('------------------------------------------\n');
-fprintf('  Iter          Error           Accuracy  \n')
+fprintf('  Iter          Accuracy          CPUTime \n')
 fprintf('------------------------------------------\n');
 
 if  isfield(pars,'lam')    
@@ -115,7 +115,7 @@ for iter     = 1:maxit
        maxiter   = iter;
     end
     
-    fprintf('  %3d          %6.2e         %.6f\n',iter,raw,acc); 
+    fprintf('  %3d           %8.5f          %.3fsec\n',iter,acc,toc(t0)); 
       
     stop1 = (iter> 4    && abs(acc-ACC(iter-1))<=5e-5);    
     stop2 = (raw < 1e-1 && maxiter < iter-4);
