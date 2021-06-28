@@ -69,7 +69,7 @@ Axz         = Ax;
 maxAcc      = 0; 
 
 fprintf('------------------------------------------\n');
-fprintf('  Iter          Error           Accuracy  \n')
+fprintf('  Iter          Accuracy          CPUTime \n')
 fprintf('------------------------------------------\n');
 
 for iter      = 1:maxit
@@ -110,7 +110,7 @@ for iter      = 1:maxit
     stop2 = (iter>5 && acc>0.99995 && raw < 1e-5*sqrt(n) && n>500); 
     
     if ~stop1
-        fprintf('  %3d          %6.2e          %6.4f\n', iter,raw, acc); 
+        fprintf('  %3d           %8.5f          %.3fsec\n',iter,acc,toc(t0));  
     end
     
     if  isfield(pars,'sp')
