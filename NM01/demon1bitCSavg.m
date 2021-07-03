@@ -5,8 +5,7 @@ m     = ceil(0.5*n);    % Number of measurements
 s     = ceil(0.01*n);   % signal sparsity
 r     = 0.05;           % probability of sign flips
 v     = 0.5;
-test  = 'r';
-type  = 'Cor'; 
+test  = 's';
 S     = 100;
 switch test
     case 's',   test0 = ceil(2:10);
