@@ -1,11 +1,11 @@
 clc; close all; warning off
 
-n          = 2000; 
+n          = 1000; 
 m          = ceil(0.5*n);
 s          = ceil(0.005*n);  % sparsity level
 r          = 0.05;           % flipping ratio
-type       = 'Ind';          % or 'Cor', matrix type
-[A,c,co,xo]= random1bcs(type,m,n,s,0.01,r,0.5);
+v          = 0.5;
+[A,c,co,xo]= random1bcs('Cor',m,n,s,0.1,r,v);
 
 pars.sp    = s; 
 pars.q     = 0.5;
