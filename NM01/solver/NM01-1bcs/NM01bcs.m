@@ -130,10 +130,11 @@ for iter      = 1:maxit
             rhs = tmp2 - P*(H1.*tmp1);
             if  nT  < 2e3          
                 D   = P*(H1.*P');            
-                D(1:nT+1:end) = D(1:nT+1:end) + mu;  
+                D(1:nT+1:end) = D(1:nT+1:end) + mu; 
                 vT  = D\rhs;  
             else    
-                vT  = my_cg(P,H1,mu,rhs,cgtol,30,zeros(nT,1),1);      
+                fx  = @(var)(mu*var + P*(H1.*(var'*P)'));
+                vT  = my_cg(fx,rhs,cgtol,20,zeros(nT,1)); 
             end        
             v   = -z; 
             v(T)= vT;  
@@ -142,19 +143,21 @@ for iter      = 1:maxit
             rhs = -mu*tmp1-(tmp2'*P)';
             if  n   < 2e3 
                 D   = P'*P;  
-                D(1:n+1:end) = D(1:n+1:end) + mu*H'; 
+                D(1:n+1:end) = D(1:n+1:end) + mu*H';  
                 u   = D\rhs;  
             else
-                u  = my_cg(P,H,mu,rhs,cgtol,50,zeros(n,1),0);
+                fx = @(var)(mu*(H.*var) + ((P*var)'*P)');  
+                u  = my_cg(fx,rhs,cgtol,50,zeros(n,1)); 
             end
             v    = -z; 
             v(T) = (tmp2+P*u)/mu;  
         end
     end 
     
-    x   = x + u;  
+    x   = x + u; 
     z   = z + v;  
     Ax  = A*x + b; 
+      
     Axz = Ax + tau*z;  
     eps = max(1e-5,eps/2);
     if mod(iter,5)==0   
@@ -240,7 +243,7 @@ function [grad,hess] = def_func(pars)
 end
 
 % Conjugate gradient method-------------------------------------------------
-function x = my_cg(P,H,mu,b,cgtol,cgit,x,flag)
+function x = my_cg(fx,b,cgtol,cgit,x)
     r = b;
     e = sum(r.*r);
     t = e;
@@ -251,17 +254,14 @@ function x = my_cg(P,H,mu,b,cgtol,cgit,x,flag)
         else
             p = r + (e/e0)*p;
         end
-        if  flag 
-            w  = mu*p + P*(H.*(p'*P)'); 
-        else
-            w  = mu*(H.*p) + ((P*p)'*P)'; 
-        end
+        w  = fx(p); 
         a  = e/sum(p.*w);
         x  = x + a * p;
         r  = r - a * w;
         e0 = e;
         e  = sum(r.*r);
     end
+    
 end
 
 % get the sparse approximation of x----------------------------------------
