@@ -134,7 +134,7 @@ for iter      = 1:maxit
                 vT  = D\rhs;  
             else    
                 fx  = @(var)(mu*var + P*(H1.*(var'*P)'));
-                vT  = my_cg(fx,rhs,cgtol,20,zeros(nT,1)); 
+                vT  = my_cg(fx,rhs,cgtol,30,zeros(nT,1)); 
             end        
             v   = -z; 
             v(T)= vT;  
