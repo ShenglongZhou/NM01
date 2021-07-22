@@ -1,4 +1,4 @@
-clc, close all, warning off 
+clc; close all; clear all; warning off
  
 n     = 500;            % Signal dimension 
 m     = ceil(0.5*n);    % Number of measurements
