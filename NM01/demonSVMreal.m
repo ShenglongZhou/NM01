@@ -1,4 +1,4 @@
-clc; close all; warning off
+clc; close all; clear all; warning off
 
 prob     = 'fabc'; %'arce'
 samp     = load(strcat(prob, '.mat')); 
