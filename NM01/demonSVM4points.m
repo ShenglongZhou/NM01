@@ -1,4 +1,4 @@
-clc; close all; warning off
+clc; close all; clear all; warning off
 
 a        = 10;
 A0       = [0 0; 0 1; 1 0; 1 a]; 
