@@ -1,8 +1,8 @@
-clc; close all; warning off
+clc; close all; clear all; warning off
 
 n          = 2000; 
 m          = ceil(0.5*n);
-s          = ceil(0.005*n);  % sparsity level
+s          = ceil(0.01*m);   % sparsity level
 r          = 0.01;           % flipping ratio
 v          = 0.5;
 [A,c,co,xo]= random1bcs('Cor',m,n,s,0.1,r,v);
