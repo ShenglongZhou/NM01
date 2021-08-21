@@ -183,7 +183,7 @@ if isfield(pars,'sp') % refinement step
             X(Ts(1:sp-1),i) = x(Ts(1:sp-1));
             X(tem(i),i)     = x(tem(i));
             X(:,i)          = X(:,i)/norm(X(:,i));
-            HD(i)           = nnz(sign(A0*X(:,i))-c)/m;
+            HD(i)           = nnz(sign(A0*X(:,i))-c)/m; 
         end
         [~,i]    = min(HD); 
         out.x    = X(:,i); 
