@@ -18,7 +18,7 @@ function out = NM01bcs(A0,c,pars)
 %           pars.q     --  Paramter in the objective (default 0.5)
 %           pars.b     --  Paramter in the objective (default 0.05)
 %           pars.lam   --  The penalty parameter     (default 1)
-%           pars.tau   --  A useful paramter         (default 1)
+%           pars.tau   --  A useful parameter         (default 1)
 %           pars.sp    --  Sparsity level of the ture solution (default 0.01*n)) 
 %           pars.maxit --  Maximum number of iterations (default 1000)  
 % =========================================================================
