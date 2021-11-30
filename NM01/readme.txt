@@ -4,7 +4,7 @@ To implement this solver, please
 [2] run demonXXXX.m to solve different problemsa
 
 This source code contains the algorithm described in:
-Shenglong Zhou, Lili Pan, Naihua Xiu, Houduo Qi, 2021
+Shenglong Zhou, Lili Pan, Naihua Xiu, Houduo Qi, SIAM Journal on Optimization,2021
 Quadratic convergence of smoothing Newton's method for 0/1 loss optimization 
 
 Send your comments and suggestions to <<< slzhou2021@163.com >>>                                  
