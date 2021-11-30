@@ -29,7 +29,7 @@ function out = NM01bcs(A0,c,pars)
 %     Out.iter:   Number of iterations
 % =========================================================================
 % Written by Shenglong Zhou on 27/06/2021 based on the algorithm proposed in
-%     Shenglong Zhou, Lili Pan, Naihua Xiu, Houduo Qi, 2021
+%     Shenglong Zhou, Lili Pan, Naihua Xiu, Houduo Qi, SIOPT, 2021
 %     Quadratic convergence of smoothing Newton's method for 0/1 loss optimization 
 % Send your comments and suggestions to <<< slzhou2021@163.com >>>                                  
 % WARNING: Accuracy may not be guaranteed!!!!!  
