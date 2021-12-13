@@ -28,8 +28,9 @@ function out = NM01svm(A0,c,pars)
 %     Out.acc:    Classification accuracy
 % =========================================================================
 % Written by Shenglong Zhou on 27/06/2021 based on the algorithm proposed in
-%     Shenglong Zhou, Lili Pan, Naihua Xiu, Houduo Qi, 2021
-%     Quadratic convergence of smoothing Newton's method for 0/1 loss optimization 
+%     Shenglong Zhou, Lili Pan, Naihua Xiu, Houduo Qi, 
+%     Quadratic convergence of smoothing Newton's method for 0/1 loss optimization,
+%     SIAM Journal on Optimization, 31(4): 3184–3211, 2021.
 % Send your comments and suggestions to <<< slzhou2021@163.com >>>                                  
 % WARNING: Accuracy may not be guaranteed!!!!!  
 % =========================================================================
